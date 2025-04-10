@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TikTok Free Coin Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; text-align: center; background: #000; color: #fff; }
+    .generator-box { margin-top: 50px; padding: 20px; background: #111; border-radius: 10px; display: inline-block; }
+    button { padding: 10px 20px; font-size: 18px; margin-top: 20px; background: #ff0050; color: white; border: none; border-radius: 5px; }
+    .hidden { display: none; }
+    .loading { width: 100%; height: 20px; background: #333; margin-top: 20px; border-radius: 10px; overflow: hidden; }
+    .bar { height: 100%; width: 0%; background: #ff0050; animation: load 4s linear forwards; }
+    @keyframes load { to { width: 100%; } }
+  </style>
+</head>
+<body>
+  <h1>TikTok Free Coins Generator</h1>
+  <div class="generator-box">
+    <p>Enter your TikTok Username:</p>
+    <input type="text" id="username" placeholder="@username">
+    <br><br>
+    <p>Select Coins:</p>
+    <select id="coins">
+      <option>1000</option>
+      <option>5000</option>
+      <option>10000</option>
+      <option>50000</option>
+    </select>
+    <br>
+    <button onclick="startGen()">Generate</button>
+
+    <div class="hidden" id="progressBox">
+      <p>Generating coins...</p>
+      <div class="loading"><div class="bar"></div></div>
+    </div>
+
+    <div class="hidden" id="verifyBox">
+      <p>Human Verification Required</p>
+      <p>Click the button below to finish</p>
+      <a href="YOUR_ADSTERRA_SMART_LINK" target="_blank">
+        <button>Verify Now</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function startGen() {
+      document.getElementById("progressBox").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("progressBox").classList.add("hidden");
+        document.getElementById("verifyBox").classList.remove("hidden");
+      }, 4500);
+    }
+  </script>
+</body>
+</html>
